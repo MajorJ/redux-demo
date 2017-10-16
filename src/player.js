@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 
 class Player extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			isExpanded: false,
-		};
-	}
 	render() {
 		const {
 			playerName, gamesPlayed, goals, assists, points, penaltyMinutes,
@@ -15,12 +8,10 @@ class Player extends Component {
 
 		return (
 			<div className="player">
-				<button onClick={
-					() => this.setState((prevState) => ({ isExpanded: !prevState.isExpanded }))}
-				>
+				<button onClick={() => this.props.onClick(playerName)}>
 					{playerName}
 				</button>
-				{this.state.isExpanded && (
+				{this.props.isExpanded && (
 					<table>
 						<tbody>
 							<tr>
