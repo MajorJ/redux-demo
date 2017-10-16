@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './app';
 import registerServiceWorker from './registerServiceWorker';
+import players from './players.json';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App players={players} />, document.getElementById('root'));
 registerServiceWorker();
